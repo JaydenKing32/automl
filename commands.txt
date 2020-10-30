@@ -1,0 +1,34 @@
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.1\bin
+
+python dataset/create_coco_tfrecord.py --image_dir=data/val2017 --caption_annotations_file=data/annotations/captions_val2017.json --output_file_prefix=tfrecord/val --num_shards=32
+python main.py --mode=eval --model_name=efficientdet-d0 --model_dir=models/efficientdet-d0/ --validation_file_pattern=tfrecord/val* --val_json_file=data/annotations/instances_val2017.json
+
+python dataset/create_coco_tfrecord.py --image_dir=data/test2017 --image_info_file=data/annotations/image_info_test-dev2017.json --output_file_prefix=tfrecord/testdev --num_shards=32
+python main.py --mode=eval --model_name=efficientdet-d0 --model_dir=models/efficientdet-d0/ --validation_file_pattern=tfrecord/testdev* --eval_samples=20288 --testdev_dir='testdev_output'
+
+
+python dataset/create_coco_tfrecord.py --image_dir=data/val2014 --caption_annotations_file=data/annotations/captions_val2014.json --output_file_prefix=tfrecord/val --num_shards=32
+python main.py --mode=eval --model_name=efficientdet-d0 --model_dir=models/efficientdet-d0/ --validation_file_pattern=tfrecord/val* --eval_samples=40504 --val_json_file=data/annotations/instances_val2014.json
+
+python model_inspect.py --runmode=saved_model_infer --model_name=efficientdet-d0 --saved_model_dir=models/efficientdet-d0-savedmodel --input_image=testdata/img1.jpg --output_image_dir=testdata --min_score_thresh=0.35 --max_boxes_to_draw=200
+
+python dataset/create_coco_tfrecord.py --image_dir=data/ILSVRC2013 --image_info_file=data/annotations/ILSVRC2014_val.json --output_file_prefix=tfrecord/val --num_shards=32
+python main.py --mode=eval --model_name=efficientdet-d0 --model_dir=models/efficientdet-d0/ --validation_file_pattern=tfrecord/val* --eval_samples=20120 --val_json_file=data/annotations/ILSVRC2014_val.json
+
+python dataset/create_coco_tfrecord.py --image_dir=data/ILSVRC2013 --object_annotations_file=data/annotations/ILSVRC2014_val.json --output_file_prefix=tfrecord/val
+python main.py --mode=eval --model_name=efficientdet-d0 --model_dir=models/efficientdet-d0/ --validation_file_pattern=tfrecord/val* --eval_samples=20120 --testdev_dir='data/ILSVRC2014_output'
+
+python dataset/create_coco_tfrecord.py --image_dir=data/ILSVRC2013 --object_annotations_file=data/annotations/ILSVRC2014_val-mod.json --output_file_prefix=tfrecord/imagenet
+python main.py --mode=eval --model_name=efficientdet-d0 --model_dir=models/efficientdet-d0/ --validation_file_pattern=tfrecord/imagenet* --eval_samples=20120 --testdev_dir='data/ILSVRC2014_output'
+python main.py --mode=eval --model_name=efficientdet-d0 --model_dir=models/efficientdet-d0/ --validation_file_pattern=tfrecord/imagenet* --eval_samples=20120 --val_json_file=data/annotations/ILSVRC2014_val-mod.json
+
+python dataset/create_coco_tfrecord.py --image_dir=data/ILSVRC2014_DET_train --object_annotations_file=data/annotations/ILSVRC2014_train.json --output_file_prefix=tfrecord/train
+python main.py --mode=train_and_eval --training_file_pattern=tfrecord/train*.tfrecord --validation_file_pattern=tfrecord/train*.tfrecord --model_name=efficientdet-d0 --model_dir=models/efficientdet-d0-finetune --ckpt=models/efficientdet-d0 --train_batch_size=64 --eval_batch_size=64 --eval_samples=1024 --num_examples_per_epoch=332764 --num_epochs=1 --hparams="num_classes=200,moving_average_decay=0,mixed_precision=true" --run_epoch_in_child_process=False
+
+python ./dataset/create_pascal_tfrecord.py --data_dir=data/VOCdevkit --year=VOC2012 --output_path=tfrecord/pascal
+python main.py --mode=eval --model_name=efficientdet-d0 --model_dir=models/efficientdet-d0/ --validation_file_pattern=tfrecord/pascal*.tfrecord --eval_samples=5717 --val_json_file=tfrecord/json_pascal.json
+
+python main.py --mode=train_and_eval --training_file_pattern=tfrecord/pascal*.tfrecord --validation_file_pattern=tfrecord/pascal*.tfrecord --model_name=efficientdet-d0 --model_dir=models/efficientdet-d0-finetune --ckpt=models/efficientdet-d0 --train_batch_size=64 --eval_batch_size=64 --eval_samples=1024 --num_examples_per_epoch=5717 --num_epochs=5 --hparams=data/VOCdevkit/VOC2012/voc_config.yaml
+
+python dataset/create_coco_tfrecord.py --image_dir=data/FullIJCNN2013 --image_info_file=data/annotations/FullIJCNN2013.json --output_file_prefix=tfrecord/val
+python main.py --mode=eval --model_name=efficientdet-d0 --model_dir=models/efficientdet-d0/ --validation_file_pattern=tfrecord/val* --eval_samples=900 --val_json_file=data/annotations/FullIJCNN2013.json

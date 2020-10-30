@@ -39,8 +39,8 @@ import PIL.Image
 
 from pycocotools import mask
 import tensorflow.compat.v1 as tf
-from dataset import label_map_util
-from dataset import tfrecord_util
+import label_map_util
+import tfrecord_util
 
 flags.DEFINE_boolean(
     'include_masks', False, 'Whether to include instance segmentations masks '
