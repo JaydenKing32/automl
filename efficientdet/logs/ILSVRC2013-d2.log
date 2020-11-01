@@ -1,0 +1,305 @@
+python main.py --mode=eval --model_name=efficientdet-d2 --model_dir=models/efficientdet-d2/ --validation_file_pattern=tfrecord/val* --eval_samples=20120 --val_json_file=data/annotations/ILSVRC2014_val.json
+2020-10-12 17:25:02.600019: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cudart64_101.dll
+I1012 17:25:04.714143 46664 main.py:228] {'name': 'efficientdet-d2', 'act_type': 'swish', 'image_size': (768, 768), 'target_size': None, 'input_rand_hflip': True, 'jitter_min': 0.1, 'jitter_max': 2.0, 'autoaugment_policy': None, 'use_augmix': False, 'augmix_params': [3, -1, 1], 'sample_image': None, 'num_classes': 90, 'seg_num_classes': 3, 'heads': ['object_detection'], 'skip_crowd_during_training': True, 'label_map': None, 'max_instances_per_image': 100, 'regenerate_source_id': False, 'min_level': 3, 'max_level': 7, 'num_scales': 3, 'aspect_ratios': [1.0, 2.0, 0.5], 'anchor_scale': 4.0, 'is_training_bn': True, 'momentum': 0.9, 'optimizer': 'sgd', 'learning_rate': 0.08, 'lr_warmup_init': 0.008, 'lr_warmup_epoch': 1.0, 'first_lr_drop_epoch': 200.0, 'second_lr_drop_epoch': 250.0, 'poly_lr_power': 0.9, 'clip_gradients_norm': 10.0, 'num_epochs': 300, 'data_format': 'channels_last', 'label_smoothing': 0.0, 'alpha': 0.25, 'gamma': 1.5, 'delta': 0.1, 'box_loss_weight': 50.0, 'iou_loss_type': None, 'iou_loss_weight': 1.0, 'weight_decay': 4e-05, 'strategy': None, 'mixed_precision': False, 'box_class_repeats': 3, 'fpn_cell_repeats': 5, 'fpn_num_filters': 112, 'separable_conv': True, 'apply_bn_for_resampling': True, 'conv_after_downsample': False, 'conv_bn_act_pattern': False, 'drop_remainder': True, 'nms_configs': {'method': 'gaussian', 'iou_thresh': None, 'score_thresh': None, 'sigma': None, 'max_nms_inputs': 0, 'max_output_size': 100}, 'fpn_name': None, 'fpn_weight_method': None, 'fpn_config': None, 'survival_prob': None, 'img_summary_steps': None, 'lr_decay_method': 'cosine', 'moving_average_decay': 0.9998, 'ckpt_var_scope': None, 'skip_mismatch': True, 'backbone_name': 'efficientnet-b2', 'backbone_config': None, 'var_freeze_expr': None, 'use_keras_model': True, 'dataset_type': None, 'positives_momentum': None, 'device': {'grad_ckpting': False, 'grad_ckpting_list': ['Add_', 'AddN'], 'nvgpu_logging': False}, 'model_name': 'efficientdet-d2', 'iterations_per_loop': 100, 'model_dir': 'models/efficientdet-d2/', 'num_shards': 8, 'num_examples_per_epoch': 120000, 'backbone_ckpt': '', 'ckpt': None, 'val_json_file': 'data/annotations/ILSVRC2014_val.json', 'testdev_dir': None, 'profile': False, 'mode': 'eval'}
+INFO:tensorflow:Using config: {'_model_dir': 'models/efficientdet-d2/', '_tf_random_seed': None, '_save_summary_steps': 100, '_save_checkpoints_steps': 100, '_save_checkpoints_secs': None, '_session_config': allow_soft_placement: true
+, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 100, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': ClusterSpec({}), '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+I1012 17:25:04.782958 46664 estimator.py:191] Using config: {'_model_dir': 'models/efficientdet-d2/', '_tf_random_seed': None, '_save_summary_steps': 100, '_save_checkpoints_steps': 100, '_save_checkpoints_secs': None, '_session_config': allow_soft_placement: true
+, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 100, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': ClusterSpec({}), '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+INFO:tensorflow:Using config: {'_model_dir': 'models/efficientdet-d2/', '_tf_random_seed': None, '_save_summary_steps': 100, '_save_checkpoints_steps': 100, '_save_checkpoints_secs': None, '_session_config': allow_soft_placement: true
+, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 100, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': ClusterSpec({}), '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+I1012 17:25:04.792905 46664 estimator.py:191] Using config: {'_model_dir': 'models/efficientdet-d2/', '_tf_random_seed': None, '_save_summary_steps': 100, '_save_checkpoints_steps': 100, '_save_checkpoints_secs': None, '_session_config': allow_soft_placement: true
+, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 100, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': ClusterSpec({}), '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+INFO:tensorflow:Waiting for new checkpoint at models/efficientdet-d2/
+I1012 17:25:04.797906 46664 checkpoint_utils.py:125] Waiting for new checkpoint at models/efficientdet-d2/
+INFO:tensorflow:Found new checkpoint at models/efficientdet-d2/model
+I1012 17:25:04.805890 46664 checkpoint_utils.py:134] Found new checkpoint at models/efficientdet-d2/model
+I1012 17:25:04.806884 46664 main.py:308] Starting to evaluate.
+2020-10-12 17:25:04.981695: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library nvcuda.dll
+2020-10-12 17:25:05.006878: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce GTX 970 computeCapability: 5.2
+coreClock: 1.342GHz coreCount: 13 deviceMemorySize: 4.00GiB deviceMemoryBandwidth: 211.48GiB/s
+2020-10-12 17:25:05.007102: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cudart64_101.dll
+2020-10-12 17:25:05.018765: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cublas64_10.dll
+2020-10-12 17:25:05.029612: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cufft64_10.dll
+2020-10-12 17:25:05.036574: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library curand64_10.dll
+2020-10-12 17:25:05.049790: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cusolver64_10.dll
+2020-10-12 17:25:05.055521: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cusparse64_10.dll
+2020-10-12 17:25:05.058653: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'cudnn64_7.dll'; dlerror: cudnn64_7.dll not found
+2020-10-12 17:25:05.058884: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1753] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+INFO:tensorflow:Calling model_fn.
+I1012 17:25:05.424235 46664 estimator.py:1162] Calling model_fn.
+I1012 17:25:05.430218 46664 efficientnet_builder.py:215] global_params= GlobalParams(batch_norm_momentum=0.99, batch_norm_epsilon=0.001, dropout_rate=0.3, data_format='channels_last', num_classes=1000, width_coefficient=1.1, depth_coefficient=1.2, depth_divisor=8, min_depth=None, survival_prob=0.8, relu_fn=functools.partial(<function activation_fn at 0x0000019006B48840>, act_type='swish'), batch_norm=<class 'utils.BatchNormalization'>, use_se=True, local_pooling=None, condconv_num_experts=None, clip_projection_output=False, blocks_args=['r1_k3_s11_e1_i32_o16_se0.25', 'r2_k3_s22_e6_i16_o24_se0.25', 'r2_k5_s22_e6_i24_o40_se0.25', 'r3_k3_s22_e6_i40_o80_se0.25', 'r3_k5_s11_e6_i80_o112_se0.25', 'r4_k5_s22_e6_i112_o192_se0.25', 'r1_k3_s11_e6_i192_o320_se0.25'], fix_head_stem=None)
+I1012 17:25:05.769311 46664 efficientdet_keras.py:682] fnode 0 : {'feat_level': 6, 'inputs_offsets': [3, 4]}
+I1012 17:25:05.770308 46664 efficientdet_keras.py:682] fnode 1 : {'feat_level': 5, 'inputs_offsets': [2, 5]}
+I1012 17:25:05.771306 46664 efficientdet_keras.py:682] fnode 2 : {'feat_level': 4, 'inputs_offsets': [1, 6]}
+I1012 17:25:05.772303 46664 efficientdet_keras.py:682] fnode 3 : {'feat_level': 3, 'inputs_offsets': [0, 7]}
+I1012 17:25:05.774298 46664 efficientdet_keras.py:682] fnode 4 : {'feat_level': 4, 'inputs_offsets': [1, 7, 8]}
+I1012 17:25:05.775296 46664 efficientdet_keras.py:682] fnode 5 : {'feat_level': 5, 'inputs_offsets': [2, 6, 9]}
+I1012 17:25:05.776292 46664 efficientdet_keras.py:682] fnode 6 : {'feat_level': 6, 'inputs_offsets': [3, 5, 10]}
+I1012 17:25:05.777289 46664 efficientdet_keras.py:682] fnode 7 : {'feat_level': 7, 'inputs_offsets': [4, 11]}
+I1012 17:25:05.779283 46664 efficientdet_keras.py:682] fnode 0 : {'feat_level': 6, 'inputs_offsets': [3, 4]}
+I1012 17:25:05.780303 46664 efficientdet_keras.py:682] fnode 1 : {'feat_level': 5, 'inputs_offsets': [2, 5]}
+I1012 17:25:05.781277 46664 efficientdet_keras.py:682] fnode 2 : {'feat_level': 4, 'inputs_offsets': [1, 6]}
+I1012 17:25:05.782274 46664 efficientdet_keras.py:682] fnode 3 : {'feat_level': 3, 'inputs_offsets': [0, 7]}
+I1012 17:25:05.783272 46664 efficientdet_keras.py:682] fnode 4 : {'feat_level': 4, 'inputs_offsets': [1, 7, 8]}
+I1012 17:25:05.784271 46664 efficientdet_keras.py:682] fnode 5 : {'feat_level': 5, 'inputs_offsets': [2, 6, 9]}
+I1012 17:25:05.786265 46664 efficientdet_keras.py:682] fnode 6 : {'feat_level': 6, 'inputs_offsets': [3, 5, 10]}
+I1012 17:25:05.787262 46664 efficientdet_keras.py:682] fnode 7 : {'feat_level': 7, 'inputs_offsets': [4, 11]}
+I1012 17:25:05.790255 46664 efficientdet_keras.py:682] fnode 0 : {'feat_level': 6, 'inputs_offsets': [3, 4]}
+I1012 17:25:05.791253 46664 efficientdet_keras.py:682] fnode 1 : {'feat_level': 5, 'inputs_offsets': [2, 5]}
+I1012 17:25:05.793273 46664 efficientdet_keras.py:682] fnode 2 : {'feat_level': 4, 'inputs_offsets': [1, 6]}
+I1012 17:25:05.798233 46664 efficientdet_keras.py:682] fnode 3 : {'feat_level': 3, 'inputs_offsets': [0, 7]}
+I1012 17:25:05.799230 46664 efficientdet_keras.py:682] fnode 4 : {'feat_level': 4, 'inputs_offsets': [1, 7, 8]}
+I1012 17:25:05.800256 46664 efficientdet_keras.py:682] fnode 5 : {'feat_level': 5, 'inputs_offsets': [2, 6, 9]}
+I1012 17:25:05.801225 46664 efficientdet_keras.py:682] fnode 6 : {'feat_level': 6, 'inputs_offsets': [3, 5, 10]}
+I1012 17:25:05.801225 46664 efficientdet_keras.py:682] fnode 7 : {'feat_level': 7, 'inputs_offsets': [4, 11]}
+I1012 17:25:05.803220 46664 efficientdet_keras.py:682] fnode 0 : {'feat_level': 6, 'inputs_offsets': [3, 4]}
+I1012 17:25:05.803220 46664 efficientdet_keras.py:682] fnode 1 : {'feat_level': 5, 'inputs_offsets': [2, 5]}
+I1012 17:25:05.805215 46664 efficientdet_keras.py:682] fnode 2 : {'feat_level': 4, 'inputs_offsets': [1, 6]}
+I1012 17:25:05.807210 46664 efficientdet_keras.py:682] fnode 3 : {'feat_level': 3, 'inputs_offsets': [0, 7]}
+I1012 17:25:05.808206 46664 efficientdet_keras.py:682] fnode 4 : {'feat_level': 4, 'inputs_offsets': [1, 7, 8]}
+I1012 17:25:05.809205 46664 efficientdet_keras.py:682] fnode 5 : {'feat_level': 5, 'inputs_offsets': [2, 6, 9]}
+I1012 17:25:05.814190 46664 efficientdet_keras.py:682] fnode 6 : {'feat_level': 6, 'inputs_offsets': [3, 5, 10]}
+I1012 17:25:05.816186 46664 efficientdet_keras.py:682] fnode 7 : {'feat_level': 7, 'inputs_offsets': [4, 11]}
+I1012 17:25:05.817183 46664 efficientdet_keras.py:682] fnode 0 : {'feat_level': 6, 'inputs_offsets': [3, 4]}
+I1012 17:25:05.818181 46664 efficientdet_keras.py:682] fnode 1 : {'feat_level': 5, 'inputs_offsets': [2, 5]}
+I1012 17:25:05.820175 46664 efficientdet_keras.py:682] fnode 2 : {'feat_level': 4, 'inputs_offsets': [1, 6]}
+I1012 17:25:05.821173 46664 efficientdet_keras.py:682] fnode 3 : {'feat_level': 3, 'inputs_offsets': [0, 7]}
+I1012 17:25:05.822169 46664 efficientdet_keras.py:682] fnode 4 : {'feat_level': 4, 'inputs_offsets': [1, 7, 8]}
+I1012 17:25:05.824163 46664 efficientdet_keras.py:682] fnode 5 : {'feat_level': 5, 'inputs_offsets': [2, 6, 9]}
+I1012 17:25:05.826180 46664 efficientdet_keras.py:682] fnode 6 : {'feat_level': 6, 'inputs_offsets': [3, 5, 10]}
+I1012 17:25:05.829150 46664 efficientdet_keras.py:682] fnode 7 : {'feat_level': 7, 'inputs_offsets': [4, 11]}
+I1012 17:25:05.899962 46664 efficientnet_model.py:717] Built stem stem : (1, 384, 384, 32)
+I1012 17:25:05.900960 46664 efficientnet_model.py:738] block_0 survival_prob: 1.0
+I1012 17:25:05.902954 46664 efficientnet_model.py:372] Block blocks_0 input shape: (1, 384, 384, 32)
+I1012 17:25:05.927886 46664 efficientnet_model.py:391] DWConv shape: (1, 384, 384, 32)
+I1012 17:25:05.948830 46664 efficientnet_model.py:195] Built SE se : (1, 1, 1, 32)
+I1012 17:25:05.967779 46664 efficientnet_model.py:412] Project shape: (1, 384, 384, 16)
+I1012 17:25:05.967779 46664 efficientnet_model.py:738] block_1 survival_prob: 0.991304347826087
+I1012 17:25:05.968777 46664 efficientnet_model.py:372] Block blocks_1 input shape: (1, 384, 384, 16)
+I1012 17:25:06.022634 46664 efficientnet_model.py:391] DWConv shape: (1, 384, 384, 16)
+I1012 17:25:06.041582 46664 efficientnet_model.py:195] Built SE se : (1, 1, 1, 16)
+I1012 17:25:06.060531 46664 efficientnet_model.py:412] Project shape: (1, 384, 384, 16)
+I1012 17:25:06.060531 46664 efficientnet_model.py:738] block_2 survival_prob: 0.9826086956521739
+I1012 17:25:06.061528 46664 efficientnet_model.py:372] Block blocks_2 input shape: (1, 384, 384, 16)
+I1012 17:25:06.078511 46664 efficientnet_model.py:388] Expand shape: (1, 384, 384, 96)
+I1012 17:25:06.097460 46664 efficientnet_model.py:391] DWConv shape: (1, 192, 192, 96)
+I1012 17:25:06.116381 46664 efficientnet_model.py:195] Built SE se : (1, 1, 1, 96)
+I1012 17:25:06.135330 46664 efficientnet_model.py:412] Project shape: (1, 192, 192, 24)
+I1012 17:25:06.136329 46664 efficientnet_model.py:738] block_3 survival_prob: 0.9739130434782609
+I1012 17:25:06.137330 46664 efficientnet_model.py:372] Block blocks_3 input shape: (1, 192, 192, 24)
+I1012 17:25:06.156275 46664 efficientnet_model.py:388] Expand shape: (1, 192, 192, 144)
+I1012 17:25:06.175225 46664 efficientnet_model.py:391] DWConv shape: (1, 192, 192, 144)
+I1012 17:25:06.207140 46664 efficientnet_model.py:195] Built SE se : (1, 1, 1, 144)
+I1012 17:25:06.225090 46664 efficientnet_model.py:412] Project shape: (1, 192, 192, 24)
+I1012 17:25:06.225090 46664 efficientnet_model.py:738] block_4 survival_prob: 0.9652173913043478
+I1012 17:25:06.228084 46664 efficientnet_model.py:372] Block blocks_4 input shape: (1, 192, 192, 24)
+I1012 17:25:06.245050 46664 efficientnet_model.py:388] Expand shape: (1, 192, 192, 144)
+I1012 17:25:06.263468 46664 efficientnet_model.py:391] DWConv shape: (1, 192, 192, 144)
+I1012 17:25:06.281421 46664 efficientnet_model.py:195] Built SE se : (1, 1, 1, 144)
+I1012 17:25:06.299373 46664 efficientnet_model.py:412] Project shape: (1, 192, 192, 24)
+I1012 17:25:06.299373 46664 efficientnet_model.py:738] block_5 survival_prob: 0.9565217391304348
+I1012 17:25:06.300370 46664 efficientnet_model.py:372] Block blocks_5 input shape: (1, 192, 192, 24)
+I1012 17:25:06.318343 46664 efficientnet_model.py:388] Expand shape: (1, 192, 192, 144)
+I1012 17:25:06.342287 46664 efficientnet_model.py:391] DWConv shape: (1, 96, 96, 144)
+I1012 17:25:06.361234 46664 efficientnet_model.py:195] Built SE se : (1, 1, 1, 144)
+I1012 17:25:06.378189 46664 efficientnet_model.py:412] Project shape: (1, 96, 96, 48)
+I1012 17:25:06.379162 46664 efficientnet_model.py:738] block_6 survival_prob: 0.9478260869565217
+I1012 17:25:06.380156 46664 efficientnet_model.py:372] Block blocks_6 input shape: (1, 96, 96, 48)
+I1012 17:25:06.398135 46664 efficientnet_model.py:388] Expand shape: (1, 96, 96, 288)
+I1012 17:25:06.417059 46664 efficientnet_model.py:391] DWConv shape: (1, 96, 96, 288)
+I1012 17:25:06.439014 46664 efficientnet_model.py:195] Built SE se : (1, 1, 1, 288)
+I1012 17:25:06.457950 46664 efficientnet_model.py:412] Project shape: (1, 96, 96, 48)
+I1012 17:25:06.457950 46664 efficientnet_model.py:738] block_7 survival_prob: 0.9391304347826087
+I1012 17:25:06.459944 46664 efficientnet_model.py:372] Block blocks_7 input shape: (1, 96, 96, 48)
+I1012 17:25:06.482910 46664 efficientnet_model.py:388] Expand shape: (1, 96, 96, 288)
+I1012 17:25:06.500835 46664 efficientnet_model.py:391] DWConv shape: (1, 96, 96, 288)
+I1012 17:25:06.521777 46664 efficientnet_model.py:195] Built SE se : (1, 1, 1, 288)
+I1012 17:25:06.543739 46664 efficientnet_model.py:412] Project shape: (1, 96, 96, 48)
+I1012 17:25:06.544718 46664 efficientnet_model.py:738] block_8 survival_prob: 0.9304347826086956
+I1012 17:25:06.546710 46664 efficientnet_model.py:372] Block blocks_8 input shape: (1, 96, 96, 48)
+I1012 17:25:06.564662 46664 efficientnet_model.py:388] Expand shape: (1, 96, 96, 288)
+I1012 17:25:06.582642 46664 efficientnet_model.py:391] DWConv shape: (1, 48, 48, 288)
+I1012 17:25:06.602581 46664 efficientnet_model.py:195] Built SE se : (1, 1, 1, 288)
+I1012 17:25:06.621512 46664 efficientnet_model.py:412] Project shape: (1, 48, 48, 88)
+I1012 17:25:06.622511 46664 efficientnet_model.py:738] block_9 survival_prob: 0.9217391304347826
+I1012 17:25:06.623506 46664 efficientnet_model.py:372] Block blocks_9 input shape: (1, 48, 48, 88)
+I1012 17:25:06.641484 46664 efficientnet_model.py:388] Expand shape: (1, 48, 48, 528)
+I1012 17:25:06.661433 46664 efficientnet_model.py:391] DWConv shape: (1, 48, 48, 528)
+I1012 17:25:06.679383 46664 efficientnet_model.py:195] Built SE se : (1, 1, 1, 528)
+I1012 17:25:06.697335 46664 efficientnet_model.py:412] Project shape: (1, 48, 48, 88)
+I1012 17:25:06.698246 46664 efficientnet_model.py:738] block_10 survival_prob: 0.9130434782608696
+I1012 17:25:06.698246 46664 efficientnet_model.py:372] Block blocks_10 input shape: (1, 48, 48, 88)
+I1012 17:25:06.717197 46664 efficientnet_model.py:388] Expand shape: (1, 48, 48, 528)
+I1012 17:25:06.736177 46664 efficientnet_model.py:391] DWConv shape: (1, 48, 48, 528)
+I1012 17:25:06.756115 46664 efficientnet_model.py:195] Built SE se : (1, 1, 1, 528)
+I1012 17:25:06.774046 46664 efficientnet_model.py:412] Project shape: (1, 48, 48, 88)
+I1012 17:25:06.774046 46664 efficientnet_model.py:738] block_11 survival_prob: 0.9043478260869565
+I1012 17:25:06.776072 46664 efficientnet_model.py:372] Block blocks_11 input shape: (1, 48, 48, 88)
+I1012 17:25:06.794032 46664 efficientnet_model.py:388] Expand shape: (1, 48, 48, 528)
+I1012 17:25:06.812952 46664 efficientnet_model.py:391] DWConv shape: (1, 48, 48, 528)
+I1012 17:25:06.832926 46664 efficientnet_model.py:195] Built SE se : (1, 1, 1, 528)
+I1012 17:25:06.851848 46664 efficientnet_model.py:412] Project shape: (1, 48, 48, 88)
+I1012 17:25:06.851848 46664 efficientnet_model.py:738] block_12 survival_prob: 0.8956521739130435
+I1012 17:25:06.852971 46664 efficientnet_model.py:372] Block blocks_12 input shape: (1, 48, 48, 88)
+I1012 17:25:06.870827 46664 efficientnet_model.py:388] Expand shape: (1, 48, 48, 528)
+I1012 17:25:06.890771 46664 efficientnet_model.py:391] DWConv shape: (1, 48, 48, 528)
+I1012 17:25:06.910720 46664 efficientnet_model.py:195] Built SE se : (1, 1, 1, 528)
+I1012 17:25:06.928643 46664 efficientnet_model.py:412] Project shape: (1, 48, 48, 120)
+I1012 17:25:06.929640 46664 efficientnet_model.py:738] block_13 survival_prob: 0.8869565217391304
+I1012 17:25:06.931635 46664 efficientnet_model.py:372] Block blocks_13 input shape: (1, 48, 48, 120)
+I1012 17:25:06.949614 46664 efficientnet_model.py:388] Expand shape: (1, 48, 48, 720)
+I1012 17:25:06.968564 46664 efficientnet_model.py:391] DWConv shape: (1, 48, 48, 720)
+I1012 17:25:06.988494 46664 efficientnet_model.py:195] Built SE se : (1, 1, 1, 720)
+I1012 17:25:07.005447 46664 efficientnet_model.py:412] Project shape: (1, 48, 48, 120)
+I1012 17:25:07.005447 46664 efficientnet_model.py:738] block_14 survival_prob: 0.8782608695652174
+I1012 17:25:07.010628 46664 efficientnet_model.py:372] Block blocks_14 input shape: (1, 48, 48, 120)
+I1012 17:25:07.029580 46664 efficientnet_model.py:388] Expand shape: (1, 48, 48, 720)
+I1012 17:25:07.049526 46664 efficientnet_model.py:391] DWConv shape: (1, 48, 48, 720)
+I1012 17:25:07.069501 46664 efficientnet_model.py:195] Built SE se : (1, 1, 1, 720)
+I1012 17:25:07.087452 46664 efficientnet_model.py:412] Project shape: (1, 48, 48, 120)
+I1012 17:25:07.088423 46664 efficientnet_model.py:738] block_15 survival_prob: 0.8695652173913044
+I1012 17:25:07.089421 46664 efficientnet_model.py:372] Block blocks_15 input shape: (1, 48, 48, 120)
+I1012 17:25:07.107372 46664 efficientnet_model.py:388] Expand shape: (1, 48, 48, 720)
+I1012 17:25:07.125325 46664 efficientnet_model.py:391] DWConv shape: (1, 48, 48, 720)
+I1012 17:25:07.148295 46664 efficientnet_model.py:195] Built SE se : (1, 1, 1, 720)
+I1012 17:25:07.167232 46664 efficientnet_model.py:412] Project shape: (1, 48, 48, 120)
+I1012 17:25:07.168210 46664 efficientnet_model.py:738] block_16 survival_prob: 0.8608695652173913
+I1012 17:25:07.169227 46664 efficientnet_model.py:372] Block blocks_16 input shape: (1, 48, 48, 120)
+I1012 17:25:07.192176 46664 efficientnet_model.py:388] Expand shape: (1, 48, 48, 720)
+I1012 17:25:07.212126 46664 efficientnet_model.py:391] DWConv shape: (1, 24, 24, 720)
+I1012 17:25:07.232064 46664 efficientnet_model.py:195] Built SE se : (1, 1, 1, 720)
+I1012 17:25:07.249020 46664 efficientnet_model.py:412] Project shape: (1, 24, 24, 208)
+I1012 17:25:07.249020 46664 efficientnet_model.py:738] block_17 survival_prob: 0.8521739130434782
+I1012 17:25:07.250003 46664 efficientnet_model.py:372] Block blocks_17 input shape: (1, 24, 24, 208)
+I1012 17:25:07.273960 46664 efficientnet_model.py:388] Expand shape: (1, 24, 24, 1248)
+I1012 17:25:07.296894 46664 efficientnet_model.py:391] DWConv shape: (1, 24, 24, 1248)
+I1012 17:25:07.317631 46664 efficientnet_model.py:195] Built SE se : (1, 1, 1, 1248)
+I1012 17:25:07.336555 46664 efficientnet_model.py:412] Project shape: (1, 24, 24, 208)
+I1012 17:25:07.336555 46664 efficientnet_model.py:738] block_18 survival_prob: 0.8434782608695652
+I1012 17:25:07.337551 46664 efficientnet_model.py:372] Block blocks_18 input shape: (1, 24, 24, 208)
+I1012 17:25:07.359520 46664 efficientnet_model.py:388] Expand shape: (1, 24, 24, 1248)
+I1012 17:25:07.382459 46664 efficientnet_model.py:391] DWConv shape: (1, 24, 24, 1248)
+I1012 17:25:07.406368 46664 efficientnet_model.py:195] Built SE se : (1, 1, 1, 1248)
+I1012 17:25:07.423325 46664 efficientnet_model.py:412] Project shape: (1, 24, 24, 208)
+I1012 17:25:07.423325 46664 efficientnet_model.py:738] block_19 survival_prob: 0.8347826086956522
+I1012 17:25:07.426326 46664 efficientnet_model.py:372] Block blocks_19 input shape: (1, 24, 24, 208)
+I1012 17:25:07.449252 46664 efficientnet_model.py:388] Expand shape: (1, 24, 24, 1248)
+I1012 17:25:07.476208 46664 efficientnet_model.py:391] DWConv shape: (1, 24, 24, 1248)
+I1012 17:25:07.496128 46664 efficientnet_model.py:195] Built SE se : (1, 1, 1, 1248)
+I1012 17:25:07.516095 46664 efficientnet_model.py:412] Project shape: (1, 24, 24, 208)
+I1012 17:25:07.516095 46664 efficientnet_model.py:738] block_20 survival_prob: 0.8260869565217391
+I1012 17:25:07.517072 46664 efficientnet_model.py:372] Block blocks_20 input shape: (1, 24, 24, 208)
+I1012 17:25:07.547020 46664 efficientnet_model.py:388] Expand shape: (1, 24, 24, 1248)
+I1012 17:25:07.569958 46664 efficientnet_model.py:391] DWConv shape: (1, 24, 24, 1248)
+I1012 17:25:07.590876 46664 efficientnet_model.py:195] Built SE se : (1, 1, 1, 1248)
+I1012 17:25:07.609851 46664 efficientnet_model.py:412] Project shape: (1, 24, 24, 208)
+I1012 17:25:07.609851 46664 efficientnet_model.py:738] block_21 survival_prob: 0.8173913043478261
+I1012 17:25:07.610840 46664 efficientnet_model.py:372] Block blocks_21 input shape: (1, 24, 24, 208)
+I1012 17:25:07.632789 46664 efficientnet_model.py:388] Expand shape: (1, 24, 24, 1248)
+I1012 17:25:07.655701 46664 efficientnet_model.py:391] DWConv shape: (1, 24, 24, 1248)
+I1012 17:25:07.677642 46664 efficientnet_model.py:195] Built SE se : (1, 1, 1, 1248)
+I1012 17:25:07.696619 46664 efficientnet_model.py:412] Project shape: (1, 24, 24, 352)
+I1012 17:25:07.696619 46664 efficientnet_model.py:738] block_22 survival_prob: 0.808695652173913
+I1012 17:25:07.697589 46664 efficientnet_model.py:372] Block blocks_22 input shape: (1, 24, 24, 352)
+I1012 17:25:07.720554 46664 efficientnet_model.py:388] Expand shape: (1, 24, 24, 2112)
+I1012 17:25:07.745487 46664 efficientnet_model.py:391] DWConv shape: (1, 24, 24, 2112)
+I1012 17:25:07.768400 46664 efficientnet_model.py:195] Built SE se : (1, 1, 1, 2112)
+I1012 17:25:07.786378 46664 efficientnet_model.py:412] Project shape: (1, 24, 24, 352)
+I1012 17:25:10.732500 46664 det_model_fn.py:76] LR schedule method: cosine
+I1012 17:25:11.076576 46664 postprocess.py:85] use max_nms_inputs for pre-nms topk.
+I1012 17:25:11.167309 46664 det_model_fn.py:515] Eval val with groudtruths data/annotations/ILSVRC2014_val.json.
+I1012 17:25:11.205206 46664 det_model_fn.py:592] Load EMA vars with ema_decay=0.999800
+INFO:tensorflow:Done calling model_fn.
+I1012 17:25:11.842501 46664 estimator.py:1164] Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2020-10-12T17:25:11Z
+I1012 17:25:11.863445 46664 evaluation.py:255] Starting evaluation at 2020-10-12T17:25:11Z
+INFO:tensorflow:Graph was finalized.
+I1012 17:25:12.360146 46664 monitored_session.py:246] Graph was finalized.
+2020-10-12 17:25:12.362756: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2020-10-12 17:25:12.371106: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x1900e5bbbf0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-10-12 17:25:12.371258: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-10-12 17:25:12.372310: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce GTX 970 computeCapability: 5.2
+coreClock: 1.342GHz coreCount: 13 deviceMemorySize: 4.00GiB deviceMemoryBandwidth: 211.48GiB/s
+2020-10-12 17:25:12.372793: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cudart64_101.dll
+2020-10-12 17:25:12.377265: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cublas64_10.dll
+2020-10-12 17:25:12.378038: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cufft64_10.dll
+2020-10-12 17:25:12.378720: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library curand64_10.dll
+2020-10-12 17:25:12.379424: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cusolver64_10.dll
+2020-10-12 17:25:12.380002: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library cusparse64_10.dll
+2020-10-12 17:25:12.383222: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'cudnn64_7.dll'; dlerror: cudnn64_7.dll not found
+2020-10-12 17:25:12.383387: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1753] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2020-10-12 17:25:12.451341: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1257] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-10-12 17:25:12.451552: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1263]      0
+2020-10-12 17:25:12.453315: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1276] 0:   N
+2020-10-12 17:25:12.456825: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x190156b9d30 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2020-10-12 17:25:12.456992: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): GeForce GTX 970, Compute Capability 5.2
+INFO:tensorflow:Restoring parameters from models/efficientdet-d2/model
+I1012 17:25:12.461147 46664 saver.py:1293] Restoring parameters from models/efficientdet-d2/model
+INFO:tensorflow:Running local_init_op.
+I1012 17:25:14.545639 46664 session_manager.py:505] Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+I1012 17:25:14.632406 46664 session_manager.py:508] Done running local_init_op.
+INFO:tensorflow:Evaluation [2012/20120]
+I1012 17:52:08.571997 46664 evaluation.py:167] Evaluation [2012/20120]
+INFO:tensorflow:Evaluation [4024/20120]
+I1012 18:18:05.675292 46664 evaluation.py:167] Evaluation [4024/20120]
+INFO:tensorflow:Evaluation [6036/20120]
+I1012 18:44:13.134907 46664 evaluation.py:167] Evaluation [6036/20120]
+INFO:tensorflow:Evaluation [8048/20120]
+I1012 19:11:21.980339 46664 evaluation.py:167] Evaluation [8048/20120]
+INFO:tensorflow:Evaluation [10060/20120]
+I1012 19:40:31.469698 46664 evaluation.py:167] Evaluation [10060/20120]
+INFO:tensorflow:Evaluation [12072/20120]
+I1012 20:09:09.217128 46664 evaluation.py:167] Evaluation [12072/20120]
+INFO:tensorflow:Evaluation [14084/20120]
+I1012 20:36:19.087354 46664 evaluation.py:167] Evaluation [14084/20120]
+INFO:tensorflow:Evaluation [16096/20120]
+I1012 21:02:15.562909 46664 evaluation.py:167] Evaluation [16096/20120]
+INFO:tensorflow:Evaluation [18108/20120]
+I1012 21:30:39.506777 46664 evaluation.py:167] Evaluation [18108/20120]
+INFO:tensorflow:Evaluation [20120/20120]
+I1012 21:59:28.183205 46664 evaluation.py:167] Evaluation [20120/20120]
+loading annotations into memory...
+Done (t=1.01s)
+creating index...
+index created!
+Loading and preparing results...
+Converting ndarray to lists...
+(2012000, 7)
+0/2012000
+1000000/2012000
+2000000/2012000
+DONE (t=11.42s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=226.63s).
+Accumulating evaluation results...
+DONE (t=67.40s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.018
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.033
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.033
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.003
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.014
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.048
+INFO:tensorflow:Inference Time : 16773.92811s
+I1012 22:04:45.792549 46664 evaluation.py:273] Inference Time : 16773.92811s
+INFO:tensorflow:Finished evaluation at 2020-10-12-22:04:45
+I1012 22:04:45.808144 46664 evaluation.py:276] Finished evaluation at 2020-10-12-22:04:45
+INFO:tensorflow:Saving dict for global step 0: AP = 0.00012391293, AP50 = 0.00020307208, AP75 = 0.000119371696, APl = 0.00029378626, APm = 7.5281314e-05, APs = 0.0002261933, ARl = 0.048065837, ARm = 0.013958942, ARmax1 = 0.018422795, ARmax10 = 0.032690607, ARmax100 = 0.033296067, ARs = 0.0030591404, box_loss = 0.0, cls_loss = 4.793795, global_step = 0, loss = 4.891081
+I1012 22:04:45.823815 46664 estimator.py:2063] Saving dict for global step 0: AP = 0.00012391293, AP50 = 0.00020307208, AP75 = 0.000119371696, APl = 0.00029378626, APm = 7.5281314e-05, APs = 0.0002261933, ARl = 0.048065837, ARm = 0.013958942, ARmax1 = 0.018422795, ARmax10 = 0.032690607, ARmax100 = 0.033296067, ARs = 0.0030591404, box_loss = 0.0, cls_loss = 4.793795, global_step = 0, loss = 4.891081
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 0: models/efficientdet-d2/model
+I1012 22:04:47.792681 46664 estimator.py:2124] Saving 'checkpoint_path' summary for global step 0: models/efficientdet-d2/model
+I1012 22:04:47.886409 46664 main.py:315] models/efficientdet-d2/model has no global step info: stop!

@@ -1,0 +1,233 @@
+python main.py --mode=eval --model_name=efficientdet-d0 --model_dir=models/efficientdet-d0/ --validation_file_pattern=tfrecord/imagenet* --eval_samples=20120 --val_json_file=data/annotations/ILSVRC2014_val-mod.json
+2020-10-27 18:04:20.187315: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'cudart64_101.dll'; dlerror: cudart64_101.dll not found
+2020-10-27 18:04:20.187470: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+I1027 18:04:23.684412 125072 main.py:228] {'name': 'efficientdet-d0', 'act_type': 'swish', 'image_size': (512, 512), 'target_size': None, 'input_rand_hflip': True, 'jitter_min': 0.1, 'jitter_max': 2.0, 'autoaugment_policy': None, 'use_augmix': False, 'grid_mask': False, 'augmix_params': [3, -1, 1], 'sample_image': None, 'num_classes': 90, 'seg_num_classes': 3, 'heads': ['object_detection'], 'skip_crowd_during_training': True, 'label_map': {1: 'person', 2: 'bicycle', 3: 'car', 4: 'motorcycle', 5: 'airplane', 6: 'bus', 7: 'train', 8: 'axe', 9: 'baby bed', 10: 'traffic light', 11: 'bagel', 12: 'balance beam', 13: 'crutch', 14: 'band aid', 15: 'bench', 16: 'bird', 17: 'basketball', 18: 'dog', 19: 'horse', 20: 'sheep', 21: 'bee', 22: 'elephant', 23: 'bear', 24: 'zebra', 25: 'binder', 26: 'baseball', 27: 'backpack', 28: 'bow tie', 29: 'bow', 30: 'croquet ball', 31: 'brassiere', 32: 'tie', 33: 'armadillo', 34: 'butterfly', 35: 'camel', 36: 'can opener', 37: 'ant', 38: 'cart', 39: 'cattle', 40: 'cello', 41: 'centipede', 42: 'chain saw', 43: 'dumbbell', 44: 'chime', 45: 'cocktail shaker', 46: 'coffee maker', 47: 'computer keyboard', 48: 'computer mouse', 49: 'corkscrew', 50: 'cream', 51: 'bowl', 52: 'banana', 53: 'apple', 54: 'cup or mug', 55: 'orange', 56: 'digital clock', 57: 'dishwasher', 58: 'bathing cap', 59: 'pizza', 60: 'dragonfly', 61: 'drum', 62: 'chair', 63: 'electric fan', 64: 'bell pepper', 65: 'face powder', 66: 'fig', 67: 'filing cabinet', 68: 'flower pot', 69: 'flute', 70: 'fox', 71: 'french horn', 72: 'frog', 73: 'laptop', 74: 'giant panda', 75: 'goldfish', 76: 'golf ball', 77: 'golfcart', 78: 'microwave', 79: 'guitar', 80: 'toaster', 81: 'hair spray', 82: 'refrigerator', 83: 'hammer', 84: 'hamster', 85: 'harmonica', 86: 'harp', 87: 'hat with a wide brim', 88: 'head cabbage', 89: 'helmet', 90: 'hippopotamus', 91: 'horizontal bar', 92: 'beaker', 93: 'hotdog', 94: 'iPod', 95: 'isopod', 96: 'jellyfish', 97: 'koala bear', 98: 'ladle', 99: 'ladybug', 100: 'lamp', 101: 'frying pan', 102: 'lemon', 103: 'lion', 104: 'lipstick', 105: 'lizard', 106: 'lobster', 107: 'maillot', 108: 'maraca', 109: 'microphone', 110: 'guacamole', 111: 'milk can', 112: 'miniskirt', 113: 'monkey', 114: 'antelope', 115: 'mushroom', 116: 'nail', 117: 'neck brace', 118: 'oboe', 119: 'diaper', 120: 'otter', 121: 'pencil box', 122: 'pencil sharpener', 123: 'perfume', 124: 'accordion', 125: 'piano', 126: 'pineapple', 127: 'ping-pong ball', 128: 'pitcher', 129: 'domestic cat', 130: 'plastic bag', 131: 'plate rack', 132: 'pomegranate', 133: 'popsicle', 134: 'porcupine', 135: 'power drill', 136: 'pretzel', 137: 'printer', 138: 'puck', 139: 'punching bag', 140: 'purse', 141: 'rabbit', 142: 'racket', 143: 'ray', 144: 'red panda', 145: 'hamburger', 146: 'remote control', 147: 'rubber eraser', 148: 'rugby ball', 149: 'ruler', 150: 'salt or pepper shaker', 151: 'saxophone', 152: 'scorpion', 153: 'screwdriver', 154: 'seal', 155: 'banjo', 156: 'ski', 157: 'skunk', 158: 'snail', 159: 'snake', 160: 'snowmobile', 161: 'snowplow', 162: 'soap dispenser', 163: 'soccer ball', 164: 'sofa', 165: 'spatula', 166: 'squirrel', 167: 'starfish', 168: 'stethoscope', 169: 'stove', 170: 'strainer', 171: 'strawberry', 172: 'stretcher', 173: 'sunglasses', 174: 'swimming trunks', 175: 'swine', 176: 'syringe', 177: 'table', 178: 'tape player', 179: 'tennis ball', 180: 'tick', 181: 'burrito', 182: 'tiger', 183: 'hair dryer', 184: 'bookshelf', 185: 'artichoke', 186: 'trombone', 187: 'trumpet', 188: 'turtle', 189: 'tv or monitor', 190: 'unicycle', 191: 'vacuum', 192: 'violin', 193: 'volleyball', 194: 'waffle iron', 195: 'washer', 196: 'water bottle', 197: 'watercraft', 198: 'whale', 199: 'wine bottle', 200: 'cucumber'}, 'max_instances_per_image': 100, 'regenerate_source_id': False, 'min_level': 3, 'max_level': 7, 'num_scales': 3, 'aspect_ratios': [1.0, 2.0, 0.5], 'anchor_scale': 4.0, 'is_training_bn': True, 'momentum': 0.9, 'optimizer': 'sgd', 'learning_rate': 0.08, 'lr_warmup_init': 0.008, 'lr_warmup_epoch': 1.0, 'first_lr_drop_epoch': 200.0, 'second_lr_drop_epoch': 250.0, 'poly_lr_power': 0.9, 'clip_gradients_norm': 10.0, 'num_epochs': 300, 'data_format': 'channels_last', 'label_smoothing': 0.0, 'alpha': 0.25, 'gamma': 1.5, 'delta': 0.1, 'box_loss_weight': 50.0, 'iou_loss_type': None, 'iou_loss_weight': 1.0, 'weight_decay': 4e-05, 'strategy': None, 'mixed_precision': False, 'box_class_repeats': 3, 'fpn_cell_repeats': 3, 'fpn_num_filters': 64, 'separable_conv': True, 'apply_bn_for_resampling': True, 'conv_after_downsample': False, 'conv_bn_act_pattern': False, 'drop_remainder': True, 'nms_configs': {'method': 'gaussian', 'iou_thresh': None, 'score_thresh': None, 'sigma': None, 'max_nms_inputs': 0, 'max_output_size': 100}, 'fpn_name': None, 'fpn_weight_method': None, 'fpn_config': None, 'survival_prob': None, 'img_summary_steps': None, 'lr_decay_method': 'cosine', 'moving_average_decay': 0.9998, 'ckpt_var_scope': None, 'skip_mismatch': True, 'backbone_name': 'efficientnet-b0', 'backbone_config': None, 'var_freeze_expr': None, 'use_keras_model': True, 'dataset_type': None, 'positives_momentum': None, 'device': {'grad_ckpting': False, 'grad_ckpting_list': ['Add_', 'AddN'], 'nvgpu_logging': False}, 'model_name': 'efficientdet-d0', 'iterations_per_loop': 100, 'model_dir': 'models/efficientdet-d0/', 'num_shards': 8, 'num_examples_per_epoch': 120000, 'backbone_ckpt': '', 'ckpt': None, 'val_json_file': 'data/annotations/ILSVRC2014_val-mod.json', 'testdev_dir': None, 'profile': False, 'mode': 'eval'}
+INFO:tensorflow:Using config: {'_model_dir': 'models/efficientdet-d0/', '_tf_random_seed': None, '_save_summary_steps': 100, '_save_checkpoints_steps': 100, '_save_checkpoints_secs': None, '_session_config': allow_soft_placement: true
+, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 100, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': ClusterSpec({}), '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+I1027 18:04:24.017572 125072 estimator.py:191] Using config: {'_model_dir': 'models/efficientdet-d0/', '_tf_random_seed': None, '_save_summary_steps': 100, '_save_checkpoints_steps': 100, '_save_checkpoints_secs': None, '_session_config': allow_soft_placement: true
+, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 100, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': ClusterSpec({}), '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+INFO:tensorflow:Using config: {'_model_dir': 'models/efficientdet-d0/', '_tf_random_seed': None, '_save_summary_steps': 100, '_save_checkpoints_steps': 100, '_save_checkpoints_secs': None, '_session_config': allow_soft_placement: true
+, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 100, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': ClusterSpec({}), '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+I1027 18:04:24.026527 125072 estimator.py:191] Using config: {'_model_dir': 'models/efficientdet-d0/', '_tf_random_seed': None, '_save_summary_steps': 100, '_save_checkpoints_steps': 100, '_save_checkpoints_secs': None, '_session_config': allow_soft_placement: true
+, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 100, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': ClusterSpec({}), '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+INFO:tensorflow:Waiting for new checkpoint at models/efficientdet-d0/
+I1027 18:04:24.033508 125072 checkpoint_utils.py:125] Waiting for new checkpoint at models/efficientdet-d0/
+INFO:tensorflow:Found new checkpoint at models/efficientdet-d0/model
+I1027 18:04:24.055450 125072 checkpoint_utils.py:134] Found new checkpoint at models/efficientdet-d0/model
+I1027 18:04:24.057446 125072 main.py:308] Starting to evaluate.
+2020-10-27 18:04:24.969810: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library nvcuda.dll
+2020-10-27 18:04:25.069943: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce GTX 970 computeCapability: 5.2
+coreClock: 1.342GHz coreCount: 13 deviceMemorySize: 4.00GiB deviceMemoryBandwidth: 211.48GiB/s
+2020-10-27 18:04:25.073241: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'cudart64_101.dll'; dlerror: cudart64_101.dll not found
+2020-10-27 18:04:25.080270: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'cublas64_10.dll'; dlerror: cublas64_10.dll not found
+2020-10-27 18:04:25.083142: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'cufft64_10.dll'; dlerror: cufft64_10.dll not found
+2020-10-27 18:04:25.085830: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'curand64_10.dll'; dlerror: curand64_10.dll not found
+2020-10-27 18:04:25.088720: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'cusolver64_10.dll'; dlerror: cusolver64_10.dll not found
+2020-10-27 18:04:25.092139: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'cusparse64_10.dll'; dlerror: cusparse64_10.dll not found
+2020-10-27 18:04:25.097714: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'cudnn64_7.dll'; dlerror: cudnn64_7.dll not found
+2020-10-27 18:04:25.097882: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1753] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+INFO:tensorflow:Calling model_fn.
+I1027 18:04:25.563077 125072 estimator.py:1162] Calling model_fn.
+I1027 18:04:25.580029 125072 efficientnet_builder.py:215] global_params= GlobalParams(batch_norm_momentum=0.99, batch_norm_epsilon=0.001, dropout_rate=0.2, data_format='channels_last', num_classes=1000, width_coefficient=1.0, depth_coefficient=1.0, depth_divisor=8, min_depth=None, survival_prob=0.0, relu_fn=functools.partial(<function activation_fn at 0x000001E4B9D9DD90>, act_type='swish'), batch_norm=<class 'utils.BatchNormalization'>, use_se=True, local_pooling=None, condconv_num_experts=None, clip_projection_output=False, blocks_args=['r1_k3_s11_e1_i32_o16_se0.25', 'r2_k3_s22_e6_i16_o24_se0.25', 'r2_k5_s22_e6_i24_o40_se0.25', 'r3_k3_s22_e6_i40_o80_se0.25', 'r3_k5_s11_e6_i80_o112_se0.25', 'r4_k5_s22_e6_i112_o192_se0.25', 'r1_k3_s11_e6_i192_o320_se0.25'], fix_head_stem=None)
+I1027 18:04:25.793225 125072 efficientdet_keras.py:682] fnode 0 : {'feat_level': 6, 'inputs_offsets': [3, 4]}
+I1027 18:04:25.794222 125072 efficientdet_keras.py:682] fnode 1 : {'feat_level': 5, 'inputs_offsets': [2, 5]}
+I1027 18:04:25.799209 125072 efficientdet_keras.py:682] fnode 2 : {'feat_level': 4, 'inputs_offsets': [1, 6]}
+I1027 18:04:25.800208 125072 efficientdet_keras.py:682] fnode 3 : {'feat_level': 3, 'inputs_offsets': [0, 7]}
+I1027 18:04:25.801206 125072 efficientdet_keras.py:682] fnode 4 : {'feat_level': 4, 'inputs_offsets': [1, 7, 8]}
+I1027 18:04:25.802203 125072 efficientdet_keras.py:682] fnode 5 : {'feat_level': 5, 'inputs_offsets': [2, 6, 9]}
+I1027 18:04:25.803200 125072 efficientdet_keras.py:682] fnode 6 : {'feat_level': 6, 'inputs_offsets': [3, 5, 10]}
+I1027 18:04:25.804198 125072 efficientdet_keras.py:682] fnode 7 : {'feat_level': 7, 'inputs_offsets': [4, 11]}
+I1027 18:04:25.806192 125072 efficientdet_keras.py:682] fnode 0 : {'feat_level': 6, 'inputs_offsets': [3, 4]}
+I1027 18:04:25.807189 125072 efficientdet_keras.py:682] fnode 1 : {'feat_level': 5, 'inputs_offsets': [2, 5]}
+I1027 18:04:25.808187 125072 efficientdet_keras.py:682] fnode 2 : {'feat_level': 4, 'inputs_offsets': [1, 6]}
+I1027 18:04:25.809185 125072 efficientdet_keras.py:682] fnode 3 : {'feat_level': 3, 'inputs_offsets': [0, 7]}
+I1027 18:04:25.817162 125072 efficientdet_keras.py:682] fnode 4 : {'feat_level': 4, 'inputs_offsets': [1, 7, 8]}
+I1027 18:04:25.818163 125072 efficientdet_keras.py:682] fnode 5 : {'feat_level': 5, 'inputs_offsets': [2, 6, 9]}
+I1027 18:04:25.819166 125072 efficientdet_keras.py:682] fnode 6 : {'feat_level': 6, 'inputs_offsets': [3, 5, 10]}
+I1027 18:04:25.820152 125072 efficientdet_keras.py:682] fnode 7 : {'feat_level': 7, 'inputs_offsets': [4, 11]}
+I1027 18:04:25.821151 125072 efficientdet_keras.py:682] fnode 0 : {'feat_level': 6, 'inputs_offsets': [3, 4]}
+I1027 18:04:25.822147 125072 efficientdet_keras.py:682] fnode 1 : {'feat_level': 5, 'inputs_offsets': [2, 5]}
+I1027 18:04:25.823145 125072 efficientdet_keras.py:682] fnode 2 : {'feat_level': 4, 'inputs_offsets': [1, 6]}
+I1027 18:04:25.824142 125072 efficientdet_keras.py:682] fnode 3 : {'feat_level': 3, 'inputs_offsets': [0, 7]}
+I1027 18:04:25.825140 125072 efficientdet_keras.py:682] fnode 4 : {'feat_level': 4, 'inputs_offsets': [1, 7, 8]}
+I1027 18:04:25.826138 125072 efficientdet_keras.py:682] fnode 5 : {'feat_level': 5, 'inputs_offsets': [2, 6, 9]}
+I1027 18:04:25.834116 125072 efficientdet_keras.py:682] fnode 6 : {'feat_level': 6, 'inputs_offsets': [3, 5, 10]}
+I1027 18:04:25.835113 125072 efficientdet_keras.py:682] fnode 7 : {'feat_level': 7, 'inputs_offsets': [4, 11]}
+I1027 18:04:25.913904 125072 efficientnet_model.py:717] Built stem stem : (1, 256, 256, 32)
+I1027 18:04:25.926869 125072 efficientnet_model.py:372] Block blocks_0 input shape: (1, 256, 256, 32)
+I1027 18:04:25.946815 125072 efficientnet_model.py:391] DWConv shape: (1, 256, 256, 32)
+I1027 18:04:25.966787 125072 efficientnet_model.py:195] Built SE se : (1, 1, 1, 32)
+I1027 18:04:25.984714 125072 efficientnet_model.py:412] Project shape: (1, 256, 256, 16)
+I1027 18:04:25.985713 125072 efficientnet_model.py:372] Block blocks_1 input shape: (1, 256, 256, 16)
+I1027 18:04:26.005658 125072 efficientnet_model.py:388] Expand shape: (1, 256, 256, 96)
+I1027 18:04:26.030276 125072 efficientnet_model.py:391] DWConv shape: (1, 128, 128, 96)
+I1027 18:04:26.053215 125072 efficientnet_model.py:195] Built SE se : (1, 1, 1, 96)
+I1027 18:04:26.077150 125072 efficientnet_model.py:412] Project shape: (1, 128, 128, 24)
+I1027 18:04:26.077150 125072 efficientnet_model.py:372] Block blocks_2 input shape: (1, 128, 128, 24)
+I1027 18:04:26.099092 125072 efficientnet_model.py:388] Expand shape: (1, 128, 128, 144)
+I1027 18:04:26.121543 125072 efficientnet_model.py:391] DWConv shape: (1, 128, 128, 144)
+I1027 18:04:26.140493 125072 efficientnet_model.py:195] Built SE se : (1, 1, 1, 144)
+I1027 18:04:26.164430 125072 efficientnet_model.py:412] Project shape: (1, 128, 128, 24)
+I1027 18:04:26.166427 125072 efficientnet_model.py:372] Block blocks_3 input shape: (1, 128, 128, 24)
+I1027 18:04:26.210307 125072 efficientnet_model.py:388] Expand shape: (1, 128, 128, 144)
+I1027 18:04:26.246737 125072 efficientnet_model.py:391] DWConv shape: (1, 64, 64, 144)
+I1027 18:04:26.277654 125072 efficientnet_model.py:195] Built SE se : (1, 1, 1, 144)
+I1027 18:04:26.335582 125072 efficientnet_model.py:412] Project shape: (1, 64, 64, 40)
+I1027 18:04:26.335582 125072 efficientnet_model.py:372] Block blocks_4 input shape: (1, 64, 64, 40)
+I1027 18:04:26.357522 125072 efficientnet_model.py:388] Expand shape: (1, 64, 64, 240)
+I1027 18:04:26.380488 125072 efficientnet_model.py:391] DWConv shape: (1, 64, 64, 240)
+I1027 18:04:26.401406 125072 efficientnet_model.py:195] Built SE se : (1, 1, 1, 240)
+I1027 18:04:26.426192 125072 efficientnet_model.py:412] Project shape: (1, 64, 64, 40)
+I1027 18:04:26.427158 125072 efficientnet_model.py:372] Block blocks_5 input shape: (1, 64, 64, 40)
+I1027 18:04:26.453092 125072 efficientnet_model.py:388] Expand shape: (1, 64, 64, 240)
+I1027 18:04:26.480042 125072 efficientnet_model.py:391] DWConv shape: (1, 32, 32, 240)
+I1027 18:04:26.502968 125072 efficientnet_model.py:195] Built SE se : (1, 1, 1, 240)
+I1027 18:04:26.530880 125072 efficientnet_model.py:412] Project shape: (1, 32, 32, 80)
+I1027 18:04:26.531877 125072 efficientnet_model.py:372] Block blocks_6 input shape: (1, 32, 32, 80)
+I1027 18:04:26.554341 125072 efficientnet_model.py:388] Expand shape: (1, 32, 32, 480)
+I1027 18:04:26.581269 125072 efficientnet_model.py:391] DWConv shape: (1, 32, 32, 480)
+I1027 18:04:26.603224 125072 efficientnet_model.py:195] Built SE se : (1, 1, 1, 480)
+I1027 18:04:26.627160 125072 efficientnet_model.py:412] Project shape: (1, 32, 32, 80)
+I1027 18:04:26.627160 125072 efficientnet_model.py:372] Block blocks_7 input shape: (1, 32, 32, 80)
+I1027 18:04:26.658066 125072 efficientnet_model.py:388] Expand shape: (1, 32, 32, 480)
+I1027 18:04:26.682003 125072 efficientnet_model.py:391] DWConv shape: (1, 32, 32, 480)
+I1027 18:04:26.704941 125072 efficientnet_model.py:195] Built SE se : (1, 1, 1, 480)
+I1027 18:04:26.727879 125072 efficientnet_model.py:412] Project shape: (1, 32, 32, 80)
+I1027 18:04:26.728877 125072 efficientnet_model.py:372] Block blocks_8 input shape: (1, 32, 32, 80)
+I1027 18:04:26.751814 125072 efficientnet_model.py:388] Expand shape: (1, 32, 32, 480)
+I1027 18:04:26.775751 125072 efficientnet_model.py:391] DWConv shape: (1, 32, 32, 480)
+I1027 18:04:26.800683 125072 efficientnet_model.py:195] Built SE se : (1, 1, 1, 480)
+I1027 18:04:26.823631 125072 efficientnet_model.py:412] Project shape: (1, 32, 32, 112)
+I1027 18:04:26.824619 125072 efficientnet_model.py:372] Block blocks_9 input shape: (1, 32, 32, 112)
+I1027 18:04:26.847558 125072 efficientnet_model.py:388] Expand shape: (1, 32, 32, 672)
+I1027 18:04:26.870518 125072 efficientnet_model.py:391] DWConv shape: (1, 32, 32, 672)
+I1027 18:04:26.893435 125072 efficientnet_model.py:195] Built SE se : (1, 1, 1, 672)
+I1027 18:04:26.914379 125072 efficientnet_model.py:412] Project shape: (1, 32, 32, 112)
+I1027 18:04:26.915405 125072 efficientnet_model.py:372] Block blocks_10 input shape: (1, 32, 32, 112)
+I1027 18:04:26.944300 125072 efficientnet_model.py:388] Expand shape: (1, 32, 32, 672)
+I1027 18:04:26.967237 125072 efficientnet_model.py:391] DWConv shape: (1, 32, 32, 672)
+I1027 18:04:26.994166 125072 efficientnet_model.py:195] Built SE se : (1, 1, 1, 672)
+I1027 18:04:27.020098 125072 efficientnet_model.py:412] Project shape: (1, 32, 32, 112)
+I1027 18:04:27.020098 125072 efficientnet_model.py:372] Block blocks_11 input shape: (1, 32, 32, 112)
+I1027 18:04:27.045031 125072 efficientnet_model.py:388] Expand shape: (1, 32, 32, 672)
+I1027 18:04:27.067993 125072 efficientnet_model.py:391] DWConv shape: (1, 16, 16, 672)
+I1027 18:04:27.092901 125072 efficientnet_model.py:195] Built SE se : (1, 1, 1, 672)
+I1027 18:04:27.112851 125072 efficientnet_model.py:412] Project shape: (1, 16, 16, 192)
+I1027 18:04:27.113849 125072 efficientnet_model.py:372] Block blocks_12 input shape: (1, 16, 16, 192)
+I1027 18:04:27.136785 125072 efficientnet_model.py:388] Expand shape: (1, 16, 16, 1152)
+I1027 18:04:27.164738 125072 efficientnet_model.py:391] DWConv shape: (1, 16, 16, 1152)
+I1027 18:04:27.185656 125072 efficientnet_model.py:195] Built SE se : (1, 1, 1, 1152)
+I1027 18:04:27.205603 125072 efficientnet_model.py:412] Project shape: (1, 16, 16, 192)
+I1027 18:04:27.206602 125072 efficientnet_model.py:372] Block blocks_13 input shape: (1, 16, 16, 192)
+I1027 18:04:27.229565 125072 efficientnet_model.py:388] Expand shape: (1, 16, 16, 1152)
+I1027 18:04:27.252477 125072 efficientnet_model.py:391] DWConv shape: (1, 16, 16, 1152)
+I1027 18:04:27.274444 125072 efficientnet_model.py:195] Built SE se : (1, 1, 1, 1152)
+I1027 18:04:27.293392 125072 efficientnet_model.py:412] Project shape: (1, 16, 16, 192)
+I1027 18:04:27.294363 125072 efficientnet_model.py:372] Block blocks_14 input shape: (1, 16, 16, 192)
+I1027 18:04:27.316332 125072 efficientnet_model.py:388] Expand shape: (1, 16, 16, 1152)
+I1027 18:04:27.343244 125072 efficientnet_model.py:391] DWConv shape: (1, 16, 16, 1152)
+I1027 18:04:27.363181 125072 efficientnet_model.py:195] Built SE se : (1, 1, 1, 1152)
+I1027 18:04:27.381158 125072 efficientnet_model.py:412] Project shape: (1, 16, 16, 192)
+I1027 18:04:27.382128 125072 efficientnet_model.py:372] Block blocks_15 input shape: (1, 16, 16, 192)
+I1027 18:04:27.410055 125072 efficientnet_model.py:388] Expand shape: (1, 16, 16, 1152)
+I1027 18:04:27.432022 125072 efficientnet_model.py:391] DWConv shape: (1, 16, 16, 1152)
+I1027 18:04:27.453938 125072 efficientnet_model.py:195] Built SE se : (1, 1, 1, 1152)
+I1027 18:04:27.476408 125072 efficientnet_model.py:412] Project shape: (1, 16, 16, 320)
+I1027 18:04:29.648835 125072 det_model_fn.py:76] LR schedule method: cosine
+I1027 18:04:29.951389 125072 postprocess.py:85] use max_nms_inputs for pre-nms topk.
+I1027 18:04:30.140192 125072 det_model_fn.py:520] Eval val with groudtruths data/annotations/ILSVRC2014_val-mod.json.
+I1027 18:04:30.409795 125072 det_model_fn.py:597] Load EMA vars with ema_decay=0.999800
+INFO:tensorflow:Done calling model_fn.
+I1027 18:04:30.928434 125072 estimator.py:1164] Done calling model_fn.
+INFO:tensorflow:Starting evaluation at 2020-10-27T18:04:30Z
+I1027 18:04:30.947487 125072 evaluation.py:255] Starting evaluation at 2020-10-27T18:04:30Z
+INFO:tensorflow:Graph was finalized.
+I1027 18:04:31.274887 125072 monitored_session.py:246] Graph was finalized.
+2020-10-27 18:04:31.318541: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2020-10-27 18:04:31.662894: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x1e4bfbd94e0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-10-27 18:04:31.663103: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-10-27 18:04:31.675498: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties:
+pciBusID: 0000:01:00.0 name: GeForce GTX 970 computeCapability: 5.2
+coreClock: 1.342GHz coreCount: 13 deviceMemorySize: 4.00GiB deviceMemoryBandwidth: 211.48GiB/s
+2020-10-27 18:04:31.680243: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'cudart64_101.dll'; dlerror: cudart64_101.dll not found
+2020-10-27 18:04:31.683204: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'cublas64_10.dll'; dlerror: cublas64_10.dll not found
+2020-10-27 18:04:31.686036: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'cufft64_10.dll'; dlerror: cufft64_10.dll not found
+2020-10-27 18:04:31.693885: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'curand64_10.dll'; dlerror: curand64_10.dll not found
+2020-10-27 18:04:31.696549: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'cusolver64_10.dll'; dlerror: cusolver64_10.dll not found
+2020-10-27 18:04:31.699350: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'cusparse64_10.dll'; dlerror: cusparse64_10.dll not found
+2020-10-27 18:04:31.702506: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'cudnn64_7.dll'; dlerror: cudnn64_7.dll not found
+2020-10-27 18:04:31.705460: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1753] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2020-10-27 18:04:31.801408: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1257] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-10-27 18:04:31.801559: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1263]      0
+2020-10-27 18:04:31.806759: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1276] 0:   N
+2020-10-27 18:04:31.831186: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x1e4c7c53630 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2020-10-27 18:04:31.831306: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): GeForce GTX 970, Compute Capability 5.2
+INFO:tensorflow:Restoring parameters from models/efficientdet-d0/model
+I1027 18:04:31.851937 125072 saver.py:1293] Restoring parameters from models/efficientdet-d0/model
+INFO:tensorflow:Running local_init_op.
+I1027 18:04:33.802482 125072 session_manager.py:505] Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+I1027 18:04:33.893249 125072 session_manager.py:508] Done running local_init_op.
+INFO:tensorflow:Evaluation [2012/20120]
+I1027 18:13:57.124741 125072 evaluation.py:167] Evaluation [2012/20120]
+INFO:tensorflow:Evaluation [4024/20120]
+I1027 18:23:14.501916 125072 evaluation.py:167] Evaluation [4024/20120]
+INFO:tensorflow:Evaluation [6036/20120]
+I1027 18:32:50.323679 125072 evaluation.py:167] Evaluation [6036/20120]
+INFO:tensorflow:Evaluation [8048/20120]
+I1027 18:42:18.427621 125072 evaluation.py:167] Evaluation [8048/20120]
+INFO:tensorflow:Evaluation [10060/20120]
+I1027 18:51:57.157598 125072 evaluation.py:167] Evaluation [10060/20120]
+INFO:tensorflow:Evaluation [12072/20120]
+I1027 19:01:33.589207 125072 evaluation.py:167] Evaluation [12072/20120]
+INFO:tensorflow:Evaluation [14084/20120]
+I1027 19:11:38.915144 125072 evaluation.py:167] Evaluation [14084/20120]
+INFO:tensorflow:Evaluation [16096/20120]
+I1027 19:22:20.899373 125072 evaluation.py:167] Evaluation [16096/20120]
+INFO:tensorflow:Evaluation [18108/20120]
+I1027 19:32:50.249364 125072 evaluation.py:167] Evaluation [18108/20120]
+INFO:tensorflow:Evaluation [20120/20120]
+I1027 19:43:40.651582 125072 evaluation.py:167] Evaluation [20120/20120]
+loading annotations into memory...
+Done (t=0.94s)
+creating index...
+index created!
+Loading and preparing results...
+Converting ndarray to lists...
+(2012000, 7)
+0/2012000
+1000000/2012000
+2000000/2012000
+DONE (t=10.18s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=232.28s).
+Accumulating evaluation results...
+DONE (t=96.71s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.000
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.017
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.030
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.030
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.012
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.043
+INFO:tensorflow:Inference Time : 6304.58203s
+I1027 19:49:35.542876 125072 evaluation.py:273] Inference Time : 6304.58203s
+INFO:tensorflow:Finished evaluation at 2020-10-27-19:49:35
+I1027 19:49:35.562572 125072 evaluation.py:276] Finished evaluation at 2020-10-27-19:49:35
+INFO:tensorflow:Saving dict for global step 0: AP = 0.00011905387, AP50 = 0.000209884, AP75 = 0.000116563955, AP_/accordion = 0.0, AP_/airplane = 0.0, AP_/ant = 4.3578302e-07, AP_/antelope = 0.0, AP_/apple = 0.0011276546, AP_/armadillo = 5.3259765e-07, AP_/artichoke = 0.0, AP_/axe = 7.393241e-06, AP_/baby bed = 0.00016147074, AP_/backpack = 1.0249472e-06, AP_/bagel = 0.0, AP_/balance beam = 0.0, AP_/banana = 1.8210216e-05, AP_/band aid = 0.00010012683, AP_/banjo = 0.0, AP_/baseball = 0.0, AP_/basketball = 4.5718857e-06, AP_/bathing cap = 0.00028656897, AP_/beaker = 0.0, AP_/bear = 4.167773e-06, AP_/bee = 6.390979e-07, AP_/bell pepper = 0.00074464775, AP_/bench = 5.249407e-05, AP_/bicycle = 0.0, AP_/binder = 0.0, AP_/bird = 3.5614816e-05, AP_/bookshelf = 0.0, AP_/bow = 0.0, AP_/bow tie = 4.1156136e-06, AP_/bowl = 0.00021485025, AP_/brassiere = 5.4613014e-05, AP_/burrito = 0.0, AP_/bus = 0.000103334736, AP_/butterfly = 0.0034280405, AP_/camel = 8.341188e-07, AP_/can opener = 0.0028281386, AP_/car = 5.32556e-06, AP_/cart = 9.024395e-06, AP_/cattle = 0.0, AP_/cello = 0.00016187155, AP_/centipede = 7.819839e-05, AP_/chain saw = 0.0001801587, AP_/chair = 6.6804732e-06, AP_/chime = 0.00030278505, AP_/cocktail shaker = 0.0, AP_/coffee maker = 1.37847255e-05, AP_/computer keyboard = 1.15453e-06, AP_/computer mouse = 8.695249e-07, AP_/corkscrew = 0.0011916897, AP_/cream = 0.0013235467, AP_/croquet ball = 0.0, AP_/crutch = 0.0, AP_/cucumber = 0.0, AP_/cup or mug = 0.001347988, AP_/diaper = 0.0, AP_/digital clock = 1.2835806e-06, AP_/dishwasher = 0.0, AP_/dog = 3.4312868e-06, AP_/domestic cat = 0.0, AP_/dragonfly = 5.1165094e-05, AP_/drum = 0.00049850205, AP_/dumbbell = 0.00013188287, AP_/electric fan = 2.3696382e-05, AP_/elephant = 7.631511e-05, AP_/face powder = 9.4344205e-06, AP_/fig = 0.0, AP_/filing cabinet = 7.076362e-05, AP_/flower pot = 0.0, AP_/flute = 0.0, AP_/fox = 0.0007636947, AP_/french horn = 0.0, AP_/frog = 1.3000568e-05, AP_/frying pan = 0.0, AP_/giant panda = 2.7082717e-06, AP_/goldfish = 1.2795e-05, AP_/golf ball = 2.0710559e-05, AP_/golfcart = 0.0, AP_/guacamole = 0.0, AP_/guitar = 4.535608e-06, AP_/hair dryer = 0.0, AP_/hair spray = 1.0447981e-05, AP_/hamburger = 0.0, AP_/hammer = 0.0, AP_/hamster = 1.3597393e-05, AP_/harmonica = 0.00016592779, AP_/harp = 1.7252449e-05, AP_/hat with a wide brim = 4.706307e-05, AP_/head cabbage = 6.6705354e-05, AP_/helmet = 0.0007625583, AP_/hippopotamus = 0.0, AP_/horizontal bar = 0.0, AP_/horse = 0.0, AP_/hotdog = 0.0, AP_/iPod = 0.0, AP_/isopod = 0.0, AP_/jellyfish = 0.0, AP_/koala bear = 0.0, AP_/ladle = 0.0, AP_/ladybug = 0.0, AP_/lamp = 0.0, AP_/laptop = 1.1501611e-05, AP_/lemon = 0.0, AP_/lion = 0.0, AP_/lipstick = 0.0, AP_/lizard = 0.0, AP_/lobster = 0.0, AP_/maillot = 0.0, AP_/maraca = 0.0, AP_/microphone = 0.0, AP_/microwave = 1.3391781e-06, AP_/milk can = 0.0, AP_/miniskirt = 0.0, AP_/monkey = 0.0, AP_/motorcycle = 0.0039141476, AP_/mushroom = 0.0, AP_/nail = 0.0, AP_/neck brace = 0.0, AP_/oboe = 0.0, AP_/orange = 0.0, AP_/otter = 0.0, AP_/pencil box = 0.0, AP_/pencil sharpener = 0.0, AP_/perfume = 0.0, AP_/person = 4.070447e-05, AP_/piano = 0.0, AP_/pineapple = 0.0, AP_/ping-pong ball = 0.0, AP_/pitcher = 0.0, AP_/pizza = 8.295479e-06, AP_/plastic bag = 0.0, AP_/plate rack = 0.0, AP_/pomegranate = 0.0, AP_/popsicle = 0.0, AP_/porcupine = 0.0, AP_/power drill = 0.0, AP_/pretzel = 0.0, AP_/printer = 0.0, AP_/puck = 0.0, AP_/punching bag = 0.0, AP_/purse = 0.0, AP_/rabbit = 0.0, AP_/racket = 0.0, AP_/ray = 0.0, AP_/red panda = 0.0, AP_/refrigerator = 1.1498295e-06, AP_/remote control = 0.0, AP_/rubber eraser = 0.0, AP_/rugby ball = 0.0, AP_/ruler = 0.0, AP_/salt or pepper shaker = 0.0, AP_/saxophone = 0.0, AP_/scorpion = 0.0, AP_/screwdriver = 0.0, AP_/seal = 0.0, AP_/sheep = 0.003197677, AP_/ski = 0.0, AP_/skunk = 0.0, AP_/snail = 0.0, AP_/snake = 0.0, AP_/snowmobile = 0.0, AP_/snowplow = 0.0, AP_/soap dispenser = 0.0, AP_/soccer ball = 0.0, AP_/sofa = 0.0, AP_/spatula = 0.0, AP_/squirrel = 0.0, AP_/starfish = 0.0, AP_/stethoscope = 0.0, AP_/stove = 0.0, AP_/strainer = 0.0, AP_/strawberry = 0.0, AP_/stretcher = 0.0, AP_/sunglasses = 0.0, AP_/swimming trunks = 0.0, AP_/swine = 0.0, AP_/syringe = 0.0, AP_/table = 0.0, AP_/tape player = 0.0, AP_/tennis ball = 0.0, AP_/tick = 0.0, AP_/tie = 1.9155727e-06, AP_/tiger = 0.0, AP_/toaster = 3.2520285e-05, AP_/traffic light = 4.327776e-06, AP_/train = 2.4472067e-06, AP_/trombone = 0.0, AP_/trumpet = 0.0, AP_/turtle = 0.0, AP_/tv or monitor = 0.0, AP_/unicycle = 0.0, AP_/vacuum = 0.0, AP_/violin = 0.0, AP_/volleyball = 0.0, AP_/waffle iron = 0.0, AP_/washer = 0.0, AP_/water bottle = 0.0, AP_/watercraft = 0.0, AP_/whale = 0.0, AP_/wine bottle = 0.0, AP_/zebra = 2.4718518e-05, APl = 0.00030214916, APm = 7.569223e-05, APs = 0.00027750042, ARl = 0.043402225, ARm = 0.011757318, ARmax1 = 0.016515521, ARmax10 = 0.029835302, ARmax100 = 0.030358305, ARs = 0.0051875343, box_loss = 0.0033423866, cls_loss = 1.2812355, global_step = 0, loss = 1.5434856
+I1027 19:49:35.591493 125072 estimator.py:2063] Saving dict for global step 0: AP = 0.00011905387, AP50 = 0.000209884, AP75 = 0.000116563955, AP_/accordion = 0.0, AP_/airplane = 0.0, AP_/ant = 4.3578302e-07, AP_/antelope = 0.0, AP_/apple = 0.0011276546, AP_/armadillo = 5.3259765e-07, AP_/artichoke = 0.0, AP_/axe = 7.393241e-06, AP_/baby bed = 0.00016147074, AP_/backpack = 1.0249472e-06, AP_/bagel = 0.0, AP_/balance beam = 0.0, AP_/banana = 1.8210216e-05, AP_/band aid = 0.00010012683, AP_/banjo = 0.0, AP_/baseball = 0.0, AP_/basketball = 4.5718857e-06, AP_/bathing cap = 0.00028656897, AP_/beaker = 0.0, AP_/bear = 4.167773e-06, AP_/bee = 6.390979e-07, AP_/bell pepper = 0.00074464775, AP_/bench = 5.249407e-05, AP_/bicycle = 0.0, AP_/binder = 0.0, AP_/bird = 3.5614816e-05, AP_/bookshelf = 0.0, AP_/bow = 0.0, AP_/bow tie = 4.1156136e-06, AP_/bowl = 0.00021485025, AP_/brassiere = 5.4613014e-05, AP_/burrito = 0.0, AP_/bus = 0.000103334736, AP_/butterfly = 0.0034280405, AP_/camel = 8.341188e-07, AP_/can opener = 0.0028281386, AP_/car = 5.32556e-06, AP_/cart = 9.024395e-06, AP_/cattle = 0.0, AP_/cello = 0.00016187155, AP_/centipede = 7.819839e-05, AP_/chain saw = 0.0001801587, AP_/chair = 6.6804732e-06, AP_/chime = 0.00030278505, AP_/cocktail shaker = 0.0, AP_/coffee maker = 1.37847255e-05, AP_/computer keyboard = 1.15453e-06, AP_/computer mouse = 8.695249e-07, AP_/corkscrew = 0.0011916897, AP_/cream = 0.0013235467, AP_/croquet ball = 0.0, AP_/crutch = 0.0, AP_/cucumber = 0.0, AP_/cup or mug = 0.001347988, AP_/diaper = 0.0, AP_/digital clock = 1.2835806e-06, AP_/dishwasher = 0.0, AP_/dog = 3.4312868e-06, AP_/domestic cat = 0.0, AP_/dragonfly = 5.1165094e-05, AP_/drum = 0.00049850205, AP_/dumbbell = 0.00013188287, AP_/electric fan = 2.3696382e-05, AP_/elephant = 7.631511e-05, AP_/face powder = 9.4344205e-06, AP_/fig = 0.0, AP_/filing cabinet = 7.076362e-05, AP_/flower pot = 0.0, AP_/flute = 0.0, AP_/fox = 0.0007636947, AP_/french horn = 0.0, AP_/frog = 1.3000568e-05, AP_/frying pan = 0.0, AP_/giant panda = 2.7082717e-06, AP_/goldfish = 1.2795e-05, AP_/golf ball = 2.0710559e-05, AP_/golfcart = 0.0, AP_/guacamole = 0.0, AP_/guitar = 4.535608e-06, AP_/hair dryer = 0.0, AP_/hair spray = 1.0447981e-05, AP_/hamburger = 0.0, AP_/hammer = 0.0, AP_/hamster = 1.3597393e-05, AP_/harmonica = 0.00016592779, AP_/harp = 1.7252449e-05, AP_/hat with a wide brim = 4.706307e-05, AP_/head cabbage = 6.6705354e-05, AP_/helmet = 0.0007625583, AP_/hippopotamus = 0.0, AP_/horizontal bar = 0.0, AP_/horse = 0.0, AP_/hotdog = 0.0, AP_/iPod = 0.0, AP_/isopod = 0.0, AP_/jellyfish = 0.0, AP_/koala bear = 0.0, AP_/ladle = 0.0, AP_/ladybug = 0.0, AP_/lamp = 0.0, AP_/laptop = 1.1501611e-05, AP_/lemon = 0.0, AP_/lion = 0.0, AP_/lipstick = 0.0, AP_/lizard = 0.0, AP_/lobster = 0.0, AP_/maillot = 0.0, AP_/maraca = 0.0, AP_/microphone = 0.0, AP_/microwave = 1.3391781e-06, AP_/milk can = 0.0, AP_/miniskirt = 0.0, AP_/monkey = 0.0, AP_/motorcycle = 0.0039141476, AP_/mushroom = 0.0, AP_/nail = 0.0, AP_/neck brace = 0.0, AP_/oboe = 0.0, AP_/orange = 0.0, AP_/otter = 0.0, AP_/pencil box = 0.0, AP_/pencil sharpener = 0.0, AP_/perfume = 0.0, AP_/person = 4.070447e-05, AP_/piano = 0.0, AP_/pineapple = 0.0, AP_/ping-pong ball = 0.0, AP_/pitcher = 0.0, AP_/pizza = 8.295479e-06, AP_/plastic bag = 0.0, AP_/plate rack = 0.0, AP_/pomegranate = 0.0, AP_/popsicle = 0.0, AP_/porcupine = 0.0, AP_/power drill = 0.0, AP_/pretzel = 0.0, AP_/printer = 0.0, AP_/puck = 0.0, AP_/punching bag = 0.0, AP_/purse = 0.0, AP_/rabbit = 0.0, AP_/racket = 0.0, AP_/ray = 0.0, AP_/red panda = 0.0, AP_/refrigerator = 1.1498295e-06, AP_/remote control = 0.0, AP_/rubber eraser = 0.0, AP_/rugby ball = 0.0, AP_/ruler = 0.0, AP_/salt or pepper shaker = 0.0, AP_/saxophone = 0.0, AP_/scorpion = 0.0, AP_/screwdriver = 0.0, AP_/seal = 0.0, AP_/sheep = 0.003197677, AP_/ski = 0.0, AP_/skunk = 0.0, AP_/snail = 0.0, AP_/snake = 0.0, AP_/snowmobile = 0.0, AP_/snowplow = 0.0, AP_/soap dispenser = 0.0, AP_/soccer ball = 0.0, AP_/sofa = 0.0, AP_/spatula = 0.0, AP_/squirrel = 0.0, AP_/starfish = 0.0, AP_/stethoscope = 0.0, AP_/stove = 0.0, AP_/strainer = 0.0, AP_/strawberry = 0.0, AP_/stretcher = 0.0, AP_/sunglasses = 0.0, AP_/swimming trunks = 0.0, AP_/swine = 0.0, AP_/syringe = 0.0, AP_/table = 0.0, AP_/tape player = 0.0, AP_/tennis ball = 0.0, AP_/tick = 0.0, AP_/tie = 1.9155727e-06, AP_/tiger = 0.0, AP_/toaster = 3.2520285e-05, AP_/traffic light = 4.327776e-06, AP_/train = 2.4472067e-06, AP_/trombone = 0.0, AP_/trumpet = 0.0, AP_/turtle = 0.0, AP_/tv or monitor = 0.0, AP_/unicycle = 0.0, AP_/vacuum = 0.0, AP_/violin = 0.0, AP_/volleyball = 0.0, AP_/waffle iron = 0.0, AP_/washer = 0.0, AP_/water bottle = 0.0, AP_/watercraft = 0.0, AP_/whale = 0.0, AP_/wine bottle = 0.0, AP_/zebra = 2.4718518e-05, APl = 0.00030214916, APm = 7.569223e-05, APs = 0.00027750042, ARl = 0.043402225, ARm = 0.011757318, ARmax1 = 0.016515521, ARmax10 = 0.029835302, ARmax100 = 0.030358305, ARs = 0.0051875343, box_loss = 0.0033423866, cls_loss = 1.2812355, global_step = 0, loss = 1.5434856
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 0: models/efficientdet-d0/model
+I1027 19:49:37.937158 125072 estimator.py:2124] Saving 'checkpoint_path' summary for global step 0: models/efficientdet-d0/model
+I1027 19:49:38.037760 125072 main.py:315] models/efficientdet-d0/model has no global step info: stop!
