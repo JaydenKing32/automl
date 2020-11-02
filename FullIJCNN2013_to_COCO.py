@@ -7,7 +7,7 @@ images = [{
     "id": i
 } for i in range(900)]
 
-with open("data/FullIJCNN2013/gt.txt", mode='r', encoding="UTF-8") as file:
+with open("efficientdet/data/FullIJCNN2013/gt.txt", mode='r', encoding="UTF-8") as file:
     annotations = []
     i = 0
 

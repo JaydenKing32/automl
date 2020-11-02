@@ -3,7 +3,6 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/efficientdet/data" />
-      <excludeFolder url="file://$MODULE_DIR$/efficientdet/logs" />
       <excludeFolder url="file://$MODULE_DIR$/efficientdet/models" />
       <excludeFolder url="file://$MODULE_DIR$/efficientdet/out" />
       <excludeFolder url="file://$MODULE_DIR$/efficientdet/tfrecord" />
