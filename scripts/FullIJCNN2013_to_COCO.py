@@ -2,8 +2,8 @@ import json
 
 images = [{
     "file_name": f"{i:05d}.jpg",
-    "height": 1360,
-    "width": 800,
+    "width": 1360,
+    "height": 800,
     "id": i
 } for i in range(900)]
 
@@ -33,7 +33,7 @@ with open("efficientdet/data/FullIJCNN2013/gt.txt", mode='r', encoding="UTF-8") 
             "iscrowd": 0,
             "image_id": image_id,
             "bbox": [x1, y1, width, height],
-            "category_id": 1,
+            "category_id": 13,
             "id": i,
             "ignore": 0
         })

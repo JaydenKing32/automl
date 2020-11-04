@@ -1,0 +1,12 @@
+AP: 0.339
+AP_50: 0.521
+AP_75: 0.364
+AP_small: 0.119
+AP_medium: 0.382
+AP_large: 0.515
+AR_max_1: 0.292
+AR_max_10: 0.456
+AR_max_100: 0.480
+AR_small: 0.190
+AR_medium: 0.551
+AR_large: 0.709

@@ -249,4 +249,4 @@ cython_debug/
 /efficientdet/out/
 /efficientdet/tfrecord/
 /efficientdet/cocoapi/
-!/efficientdet/logs/*.log
+!/logs/*.log
