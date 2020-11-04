@@ -1,0 +1,1 @@
+Convert GTSDB files from PPM to JPG with `magick mogrify -format jpg -quality 75 *.ppm`

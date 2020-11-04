@@ -1,4 +1,17 @@
 import json
+from argparse import ArgumentParser
+
+parser = ArgumentParser(description="Converts GTSDB ground-truth file to COCO object annotations file")
+parser.add_argument("gt", help="ground-truth file")
+gt_path = parser.parse_args().gt
+
+sign_id = 13
+
+categories = {
+    "supercategory": "outdoor",
+    "id": sign_id,
+    "name": "stop sign"
+}
 
 images = [{
     "file_name": f"{i:05d}.jpg",
@@ -7,7 +20,7 @@ images = [{
     "id": i
 } for i in range(900)]
 
-with open("efficientdet/data/FullIJCNN2013/gt.txt", mode='r', encoding="UTF-8") as file:
+with open(gt_path, mode='r', encoding="UTF-8") as file:
     annotations = []
     i = 0
 
@@ -33,10 +46,18 @@ with open("efficientdet/data/FullIJCNN2013/gt.txt", mode='r', encoding="UTF-8") 
             "iscrowd": 0,
             "image_id": image_id,
             "bbox": [x1, y1, width, height],
-            "category_id": 13,
+            "category_id": sign_id,
             "id": i,
             "ignore": 0
         })
         i += 1
-print(json.dumps(images))
-print(json.dumps(annotations))
+
+annotation_dict = {
+    "type": "instances",
+    "categories": [categories],
+    "images": images,
+    "annotations": annotations
+}
+
+with open("FullIJCNN2013.json", mode='w', encoding="UTF-8", newline='\n') as annotation_file:
+    json.dump(annotation_dict, annotation_file, indent=2)
