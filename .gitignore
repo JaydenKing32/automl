@@ -250,3 +250,4 @@ cython_debug/
 /efficientdet/tfrecord/
 /efficientdet/cocoapi/
 !/logs/*.log
+/scripts/ap_scores.csv
