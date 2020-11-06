@@ -4,8 +4,9 @@ from copy import deepcopy
 from shutil import copy
 
 parser = ArgumentParser(description="Converts class IDs in DEST annotation file to match class IDs in SOURCE")
-parser.add_argument("source", help="source annotation file")
 parser.add_argument("dest", help="destination annotation file, will be modified")
+parser.add_argument("-s", "--source", default="coco_categories.json",
+                    help="source annotation file, leave blank for COCO category IDs")
 args = parser.parse_args()
 
 source_path = args.source
